@@ -12,3 +12,4 @@ for (var i = 0; i < 5; i++) {
 if (true) {
     console.log('123');
 }
+console.log('Hi');
