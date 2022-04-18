@@ -12,9 +12,15 @@ app.on('request', (req, res) => {
         // console.log(req.url);
 
         //获取请求报文信息 req.headers
-        console.log(req.headers['accept']);
+        // console.log(req.headers['accept']);
+
+        //响应报文(状态码，内容类型)
+        res.writeHead(200, {
+            'content-type': 'text/html;charset=utf8'
+        })
+
         if (req.url == '/index' || req.url == '/') {
-            res.end('Welcome to homepage')
+            res.end('<h2>欢迎来到首页</h2>')
         } else if (req.url == '/list') {
             res.end('Welcome to listpage')
         } else {
