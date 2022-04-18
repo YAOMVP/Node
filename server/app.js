@@ -6,12 +6,25 @@ const app = http.createServer();
 app.on('request', (req, res) => {
         //获取请求方式
         // req.method
-        console.log(req.method);
-        if (req.method == 'POST') {
-            res.end('post')
-        } else if (req.method == 'GET') {
-            res.end('get')
+        // console.log(req.method);
+
+        //获取请求地址 req.url
+        // console.log(req.url);
+
+        //获取请求报文信息 req.headers
+        console.log(req.headers['accept']);
+        if (req.url == '/index' || req.url == '/') {
+            res.end('Welcome to homepage')
+        } else if (req.url == '/list') {
+            res.end('Welcome to listpage')
+        } else {
+            res.end('Not found')
         }
+        // if (req.method == 'POST') {
+        //     res.end('post')
+        // } else if (req.method == 'GET') {
+        //     res.end('get')
+        // }
         // res.end('<h2>HELLO USER</h2>')
     })
     //监听端口才可以
