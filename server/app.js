@@ -18,7 +18,7 @@ app.on('request', (req, res) => {
         res.writeHead(200, {
             'content-type': 'text/html;charset=utf8'
         })
-
+        console.log(req.url);
         if (req.url == '/index' || req.url == '/') {
             res.end('<h2>欢迎来到首页</h2>')
         } else if (req.url == '/list') {
