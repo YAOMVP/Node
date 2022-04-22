@@ -28,17 +28,3 @@ app.on('request', (req, res) => {
 })
 app.listen(3000)
 console.log('okokok');
-
-/* const http = require ('http');
-const url = require('url');
-const app = http.createServer();
-app.on ('request',(req,res)=>{
-    const method = req.method.toLowerCase();
-    const pathname = url.parse(req.url).pathname;
-    if (method == 'get'){
-        if(){}
-
-    } else if (method == 'post'){
-
-    }
-}) */
