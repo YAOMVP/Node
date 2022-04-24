@@ -27,6 +27,6 @@ app.on('request', (req, res) => {
     })
 })
 
-//4.监听端口才可以
+//4.最后监听端口才可以
 app.listen(3000)
 console.log('OK');
