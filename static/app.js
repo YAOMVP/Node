@@ -20,7 +20,7 @@ app.on('request', (req, res) => {
             res.writeHead(404, {
                 'content-type': 'text/html'
             })
-            res.end('sorry,can not open!')
+            res.end('sorry,can not open it!')
             return
         }
         res.end(result)
