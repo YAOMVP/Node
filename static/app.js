@@ -5,14 +5,19 @@ const url = require('url');
 const fs = require('fs');
 //拼接路径
 const path = require('path');
+//第三方模块
+const mime = require('mime');
 //2.app对象就是网站服务器对象
 const app = http.createServer();
 //3.为网站服务器添加请求事件,有请求来触发事件，添加事件 处理函数
 app.on('request', (req, res) => {
     let pathname = url.parse(req.url).pathname;
+    pathname = pathname == '/' ? '/default.html' : pathname;
     //将用户的请求路径转换为服务器实际的硬盘路径,就需要进行路径拼接
     //(__dirname绝对路径 public文件都在这里边 pathname用户请求路径)
     let realPath = path.join(__dirname, 'public' + pathname)
+        //可根据路径返回资源的类型
+    const type = mime.getType(realPath)
         //读取文件
     fs.readFile(realPath, (error, result) => {
         //文件读取失败
@@ -23,10 +28,13 @@ app.on('request', (req, res) => {
             res.end('sorry,can not open it!')
             return
         }
+        res.writeHead(200, {
+            'content-type': type
+        })
         res.end(result)
     })
 })
 
 //4.最后监听端口才可以
 app.listen(3000)
-console.log('OK');
+console.log('OK niubi');
