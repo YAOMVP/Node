@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "art-template": "^4.13.2",
     "gulp": "^4.0.2",
     "mime": "^3.0.0",
     "mongoose": "^6.3.1"
