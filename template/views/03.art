@@ -1,0 +1,20 @@
+<!-- 标准语法 -->
+<ul>
+    <!-- users这个数组 $value是第一个对象-->
+    {{each users}}
+    <li>
+        {{$value.name}} {{$value.age}} {{$value.sex}}
+    </li>
+    {{/each}}
+</ul>
+
+<!-- 原始语法 -->
+<ul>
+    <% for(let i = 0; i<users.length; i++){%>
+        <li>
+            <%= users[i].name %>
+                <%= users[i].age %>
+                    <%= users[i].sex %>
+        </li>
+        <% }%>
+</ul>
