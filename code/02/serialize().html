@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <script src="./lib/jquery.js"></script>
+</head>
+
+<body>
+    <form action="/login" id="f1">
+        <input type="text" name="user_name" />
+        <input type="password" name="password" />
+        <button type="submit">提交</button>
+    </form>
+    <script>
+        //监听表单的提交事件
+
+        /*     $(function() {
+            $('#f1').submit(function(e) {
+                alert('监听到了表单提交的事件')
+                //不让表单自动跳转了
+                e.preventDefault()
+                //快速获取表单里的值，如果表单里不仅仅有用户名密码这些，有很多就需要使用serialize()  😊一定要有name属性
+                var data = $(this).serialize()
+                console.log(data)
+            })
+        })
+ */
+        //第二种方式
+        $('#f1').on('submit', function(e) {
+            alert('监听到了表单提交的事件')
+                //不让表单自动跳转了
+            e.preventDefault()
+                //快速获取表单里的值，如果表单里不仅仅有用户名密码这些，有很多就需要使用serialize()
+            var data = $(this).serialize()
+            console.log(data);
+        })
+    </script>
+</body>
+
+</html>
