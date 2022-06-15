@@ -11,17 +11,35 @@
 
 <body>
     <button class="btnGET">发起GET请求</button>
+    <ol>
+
+    </ol>
     <script>
-        // 常识: 前端到底使用哪种请求方式,是由后台来决定
-        // 😊掌握不带参数的get请求：
-        //(不带参数的意思：只要发起请求后台就给,后台不需要你提供参数)
+        // 😊带参数的get请求：
+        // 想获得哪些数据 Requirements:Get 10 jokes and render them in ol.
         $(function() {
             $(".btnGET").on("click", function() {
-                $.get({ //😊是方法，传进去对象
-                    url: "https://autumnfish.cn/api/joke", //1.和哪个后台要数据 接口地址
-                    success: function(backData) { //2.请求成功的回调函数，参数是后台响应的数据，backData是返回的数据
-                        // console.log(backData);
-                        $("body").append(`<h3>${backData}</h3>`);
+                //发起get请求
+                $.get({ //😍忘了：是方法，传进去的是对象
+                    url: "https://autumnfish.cn/api/joke/list",
+                    //准备请求参数
+                    data: {
+                        num: 10
+                    },
+                    success: function(backData) {
+                        console.log(backData);
+                        //😍忘了 获得后台data里返回的Array数组
+                        let data = backData.data
+                            //console.log(data); 现在拿到了数组
+
+                        //😍渲染到ol里,循环数组然后生成li
+                        //😊忘了生成一个空的htmlStr
+                        let htmlStr = "";
+                        $.each(data, function(index, value) { //遍历数据，输出全部数据
+                            htmlStr += `<li>${value} </li>\n`
+                        })
+                        console.log(htmlStr);
+                        $("ol").html(htmlStr); //html()方法，就是原生的innerHTML
                     }
                 })
             })
