@@ -11,35 +11,44 @@
 
 <body>
     <button class="btnGET">发起GET请求</button>
-    <ol>
 
-    </ol>
     <script>
-        // 😊带参数的get请求：
-        // 想获得哪些数据 Requirements:Get 10 jokes and render them in ol.
+        // 😊带参数的get请求(另外两种方式)：
         $(function() {
             $(".btnGET").on("click", function() {
-                //发起get请求
-                $.get({ //😍忘了：是方法，传进去的是对象
+                $.get({
                     url: "https://autumnfish.cn/api/joke/list",
-                    //准备请求参数
                     data: {
                         num: 10
                     },
                     success: function(backData) {
                         console.log(backData);
-                        //😍忘了 获得后台data里返回的Array数组
-                        let data = backData.data
-                            //console.log(data); 现在拿到了数组
+                    }
+                })
+            })
+        })
 
-                        //😍渲染到ol里,循环数组然后生成li
-                        //😊忘了生成一个空的htmlStr
-                        let htmlStr = "";
-                        $.each(data, function(index, value) { //遍历数据，输出全部数据
-                            htmlStr += `<li>${value} </li>\n`
-                        })
-                        console.log(htmlStr);
-                        $("ol").html(htmlStr); //html()方法，就是原生的innerHTML
+        //😊第二种方式：字符串结构传递参数
+        $(function() {
+            $(".btnGET").on("click", function() {
+                $.get({
+                    url: "https://autumnfish.cn/api/joke/list",
+                    data: "num=20",
+                    success: function(backData) {
+                        console.log(backData);
+                    }
+                })
+            })
+        })
+
+        //😊第3种方式：利用url参数的拼接
+        //是get参数特有的方式，因为get参数不会保密
+        $(function() {
+            $(".btnGET").on("click", function() {
+                $.get({
+                    url: "https://autumnfish.cn/api/joke/list?num=30",
+                    success: function(backData) {
+                        console.log(backData);
                     }
                 })
             })
