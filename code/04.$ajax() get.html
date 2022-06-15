@@ -10,21 +10,18 @@
 </head>
 
 <body>
-    <button id="btnGET">发起GET请求</button>
-
+    <button class="btnGET">发起GET请求</button>
     <script>
+        // 常识: 前端到底使用哪种请求方式,是由后台来决定
+        // 😊掌握不带参数的get请求：
+        //(不带参数的意思：只要发起请求后台就给,后台不需要你提供参数)
         $(function() {
-            //为按钮 绑定单机事件处理函数
-            $('#btnGET').on('click', function() {
-                $.ajax({
-                    type: 'GET',
-                    url: 'http:// ',
-                    //id为1那条参数的信息
-                    data: {
-                        id: 1
-                    },
-                    success: function(res) {
-                        console.log(res);
+            $(".btnGET").on("click", function() {
+                $.get({ //😊是方法，传进去对象
+                    url: "https://autumnfish.cn/api/joke", //1.和哪个后台要数据 接口地址
+                    success: function(backData) { //2.请求成功的回调函数，参数是后台响应的数据，backData是返回的数据
+                        // console.log(backData);
+                        $("body").append(`<h3>${backData}</h3>`);
                     }
                 })
             })
