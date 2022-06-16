@@ -6,25 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./lib/jquery.js"></script>
+
 </head>
 
 <body>
-    <button id="btnPOST">发起post请求</button>
+    <button class="get">get获得图书</button>
+    <button class="post">post添加图书</button>
+    <br> 书名: <input type="text" class="bookname"><br> 作者: <input type="text" class="author"><br> 出版社: <input type="text" class="publisher"><br>
+    <script src="./lib/jquery.js"></script>
+
 
     <script>
+        //复习之前的get不带参数的请求
         $(function() {
-            $('#btnPOST').on('click', function() {
-                $.ajax({
-                    type: 'POST',
-                    url: 'http://',
+            $(".get").on("click", function() {
+                $.get({
+                    url: "http://www.liulongbin.top:3006/api/getbooks",
+                    success: function(backData) {
+                        console.log(backData);
+                    }
+                })
+            })
+        })
+
+        //post请求案例
+        $(function() {
+            $(".post").on("click", function() {
+                let bookName = $(".bookname").val().trim(); //😊比忘了虽然获取过来了，但是要拿到里边的值和去掉首尾空格
+                let bookAuthor = $(".author").val().trim();
+                let bookPublisher = $(".publisher").val().trim();
+                $.post({
+                    url: "http://www.liulongbin.top:3006/api/addbook",
                     data: {
-                        bookname: '水浒传',
-                        author: '施耐庵',
-                        publisher: '北京出版社'
+                        bookname: bookName,
+                        author: bookAuthor,
+                        publisher: bookPublisher
                     },
-                    success: function(res) {
-                        console.log(res)
+                    success: function(backData) {
+                        console.log(backData);
                     }
                 })
             })
