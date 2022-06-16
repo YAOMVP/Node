@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+
+<body>
+    <button class="get">get获得图书</button>
+    <button class="post">post添加图书</button>
+    <br> 书名 : <input type="text" class="bookname"><br> 作者 : <input type="text" class="author"><br> 出版社: <input type="text" class="publisher"><br>
+
+    <script src="./lib/jquery.js"></script>
+    <script>
+        $(function() {
+            $(".get").on("click", function() {
+                $.ajax({
+                    type: "get", //默认的type是get请求，可以不写
+                    url: "http://www.liulongbin.top:3006/api/getbooks",
+                    success: function(backData) {
+                        console.log(backData);
+                    }
+                })
+            })
+            $(".post").on("click", function() {
+                //拿到用户输入的值
+                let bookName = $(".bookname").val().trim();
+                let bookAuthor = $(".author").val().trim();
+                let bookPublisher = $(".publisher").val().trim();
+                //😊别忘了进行判断 为空
+                if (bookName === "" || bookAuthor === "" || bookPublisher === "") {
+                    return "";
+                }
+                $.ajax({
+                    type: "post",
+                    url: "http://www.liulongbin.top:3006/api/addbook",
+                    data: {
+                        bookname: bookName,
+                        author: bookAuthor,
+                        publisher: bookPublisher
+                    },
+                    success: function(backData) {
+                        console.log(backData);
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
