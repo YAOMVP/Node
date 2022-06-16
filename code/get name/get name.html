@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get name</title>
+    <link rel="stylesheet" href="./get name.css">
+</head>
+
+<body>
+    <img src="images/search_title.png" alt="" class="search_title">
+
+    <div class="search_wrap">
+        <input type="text" placeholder="请输入查询的名字" class="hero" />
+        <input type="button" value="英雄查询" class="search" />
+    </div>
+    <h2 class="yangpi">
+        <div class="wrap">
+            英雄名称：<span class="name"></span><br> 英雄外号：
+            <span class="title"></span>
+        </div>
+    </h2>
+
+
+    <script src="../lib/jquery.js"></script>
+    <script>
+        $(function() {
+            $(".search").on("click", function() { //😊都在点击事件之后发生
+                let heroName = $(".hero").val().trim();
+                if (heroName === "") {
+                    return "";
+                }
+                $.get({
+                    url: `https://autumnfish.cn/api/hero/simple?name=${heroName}`, //😊忘了 字符串一定要记得模板拼接，不是数字，要不然显示不出来
+                    success: function(backData) {
+                        console.log(backData);
+                        $(".name").html(heroName);
+                        $(".title").html(backData); //😊忘了 这是方法要写在(里边)
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>
