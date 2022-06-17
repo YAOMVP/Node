@@ -1,0 +1,114 @@
+body {
+    background-color: black;
+}
+
+.hero {
+    display: block;
+    margin: 0 auto;
+    padding: 0px;
+    font-size: 16px;
+    width: 400px;
+    height: 36px;
+    border-radius: 18px;
+    outline: none;
+    border: 1px solid #593f08;
+    text-indent: 15px;
+    background-color: rgba(89, 63, 8, 0.4);
+    color: #d0b886;
+}
+
+.bg {
+    width: 1144px;
+    height: 635px;
+    margin: 10px auto;
+    background: url("images/yangpi_bg02.png") no-repeat;
+}
+
+.bg .left {
+    width: 450px;
+    height: 580px;
+    float: left;
+    margin-left: 56px;
+    position: relative;
+}
+
+.left span {
+    color: white;
+}
+
+.name_con {
+    margin-top: 305px;
+    font-size: 16px;
+    color: #593f08;
+    font-family: "楷体";
+    font-weight: bold;
+    line-height: 29px;
+}
+
+.showname {
+    position: absolute;
+    left: 100px;
+    top: 131px;
+    width: 240px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 30px;
+    color: #593f08;
+    font-weight: bold;
+}
+
+.left .name {
+    font-size: 16px;
+    color: #593f08;
+    font-family: "楷体";
+    font-weight: bold;
+    line-height: 29px;
+}
+
+.title_con {
+    font-size: 16px;
+    color: #593f08;
+    font-family: "楷体";
+    font-weight: bold;
+    line-height: 29px;
+}
+
+.left .title {
+    font-size: 16px;
+    color: #593f08;
+    font-family: "楷体";
+    font-weight: bold;
+    line-height: 29px;
+}
+
+.story_con {
+    margin: 0px;
+    font-size: 16px;
+    color: #593f08;
+    font-family: "楷体";
+    font-weight: bold;
+    line-height: 29px;
+    width: 460px;
+    height: 200px;
+    overflow: auto;
+}
+
+.left .story {
+    font-size: 16px;
+    color: #593f08;
+    font-family: "楷体";
+    font-weight: bold;
+    line-height: 29px;
+}
+
+.right {
+    width: 547px;
+    height: 400px;
+    float: right;
+    margin: 32px 42px 0 0;
+    border: 2px solid #593f08;
+    background-image: url(http://ossweb-img.qq.com/images/lol/web201310/skin/big17000.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
