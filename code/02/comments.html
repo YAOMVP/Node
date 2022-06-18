@@ -5,39 +5,107 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>comments</title>
+    <title>comment</title>
     <link rel="stylesheet" href="./lib/bootstrap.css">
-    <script src="./lib/jquery.js"></script>
-    <script src="./js/cmt.js"></script>
+    <style>
+        li {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .w {
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
-<body style="padding: 15px">
-    <!-- 评论面板 -->
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">发表评论</h3>
+<body>
+
+    <body style="padding: 15px;">
+        <div class="w">
+            <!-- 评论面板 -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">发表评论</h3>
+                </div>
+                <form class="panel-body" id="formAddCmt">
+                    <div>评论人：</div>
+                    <input type="text" class="form-control" name="username" autocomplete="off" />
+                    <div>评论内容：</div>
+                    <textarea class="form-control" name="content"></textarea>
+
+
+                    <button type="submit" class="btn btn-danger btn-add">发表评论</button>
+                </form>
+            </div>
+            <!-- 评论列表 -->
+            <ul class="list-group" id="cmt-list">
+                <!-- <li class="list-group-item">
+                    <span class="badge" style="background-color: #F0AD4E;">评论时间：</span>
+                    <span class="badge" style="background-color: #5BC0DE;">评论人：</span> 评论内容
+                </li> -->
+            </ul>
         </div>
-        <form class="panel-body" class="formAddCmt">
-            <div>评论人：</div>
-            <!-- 加上 form-control 会有bootstrap特别美化的效果 -->
-            <input type="text" class="form-control" name="username">
-            <div>评论内容:</div>
-            <textarea class="form-control" name="content"></textarea>
-            <button type="submit" class="btn btn-primary ">发表评论</button>
-        </form>
-    </div>
-
-
-
-    <!-- 评论列表 -->
-
-    <ul class="list-group" id="cmt-list">
-        <li class="list-group-item">
-            <span class="badge" style="background-color:  #f0ad4e; ;">评论时间</span>
-            <span class="badge" style="background-color: #5bc0de;">评论人</span> Item1
-        </li>
-    </ul>
-
-</body>
+        <script src="./lib/jquery.js"></script>
+        <script>
+            //😊现在做添加/收集评论
+            $(function() {
+                //1.😊获取评论 因为要老获取 可以封装一个函数
+                function loadData() {
+                    //2.😊发起ajax请求获得数据
+                    $.ajax({
+                        type: "get",
+                        url: "http://www.liulongbin.top:3006/api/cmtlist",
+                        success: function(backData) {
+                            // console.log(backData);
+                            if (backData.status === 200) {
+                                //3.😊渲染数据 是一个数组 
+                                //4.😊先拿到了这个数组
+                                let data = backData.data;
+                                let htmlStr = ""; //给一个容器
+                                //5.😊所以用到遍历数组
+                                $.each(data, function(index, value) {
+                                        //6.😊模板字符串拼接的方式：
+                                        htmlStr += `
+                                    <li class="list-group-item">
+                                        <span class="badge" style="background-color: #F0AD4E;">${value.time}</span>
+                                        <span class="badge" style="background-color: #5BC0DE;">${value.username}</span>
+                                        ${value.content}
+                                    </li>
+                                `
+                                    })
+                                    //7.😉渲染到页面中
+                                $(".list-group").html(htmlStr);
+                            }
+                        }
+                    })
+                }
+                // 😊在这块调用！！！！！！！！！😊首次加载,调用函数
+                loadData();
+                //8.😊点击添加按钮 添加评论：
+                $(".btn-add").on("click", function(e) {
+                    e.preventDefault(); //可以先阻止个默认行为
+                    //9.😊获取所有数据，serialize()： 查看对应名字是否一致
+                    let data = $("#formAddCmt").serialize();
+                    //9.😊发送ajax请求：
+                    $.ajax({
+                        type: "post",
+                        url: "http://www.liulongbin.top:3006/api/addcmt",
+                        data: data,
+                        success: function(backData) {
+                            console.log(backData);
+                            if (backData.status === 201) {
+                                loadData();
+                                //😊 拓展: 原生方法清空表单控件
+                                document.querySelector("#formAddCmt").reset();
+                            }
+                        }
+                    })
+                })
+            })
+        </script>
+    </body>
 
 </html>
