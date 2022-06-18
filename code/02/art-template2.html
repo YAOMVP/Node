@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>art-template2</title>
+</head>
+
+<body>
+    <div class="box">
+
+
+    </div>
+
+    <script src="./lib/jquery.js"></script>
+    <script src="./lib/template-web.js"></script>
+    <script type="text/html" id="tpl-info">
+        <!-- @原义输出 -->
+        <div>{{@title}}</div>
+
+        <!-- 花花括号 标准输出 -->
+        <div>Name:{{name}}</div>
+        <div>Age:{{age}}</div>
+        <div>Gender:{{gender}}</div>
+
+        <!-- 循环语法 有开头有结尾 因为是数组，要循环，循环的是hobby -->
+        <ul>
+            {{each hobby}}
+            <li>{{$value}}</li>
+            {{/each}}
+        </ul>
+
+        <!-- 判断语法 有开头有结尾-->
+        <div>
+            {{if level ===1}} 普通会员 {{else if level===2}} 中等会员 {{else if level===3}} 高级会员 {{else}} 不是会员 {{/if}}
+        </div>
+
+        <!-- 😊7.0过滤函数 意思是：当后台的原始数据不满足条件的时候-->
+        <!-- 😊7.1准备一个函数预处理  -->
+        <!-- 😊7.2 调用函数  过滤函数的结果给原始数据  time|changeTime-->
+        <!--  😊7.3将时间对象转换成 dd/mm/yyyy hh:mm:ss-->
+        <!--  😊7.4 将数据返回出去-->
+        <div>
+            <!-- 7.2 过滤函数的结果给原始数据 -->
+            注册时间：{{time |changeTime}}
+        </div>
+    </script>
+    <script>
+        $(function() {
+                let userInfo = {
+                    title: "<h1>爱是一道光</h1>", //😊注意""的位置
+                    name: "大米",
+                    age: 18,
+                    gender: "Male",
+                    hobby: ["抽烟", "喝酒", "烫头"],
+                    level: 3, //这是客户等级
+                    time: new Date() //7.0
+                }
+
+                //😊把过滤函数 保存到指定位置
+                // 7.1 预处理函数：
+                //template.defaults.imports().***函数名字 = function(time){}
+                template.defaults.imports.changeTime = function(time) {
+                    // 7.3将时间对象转换成 dd/mm/yyyy hh:mm:ss
+                    let year = time.getFullYear();
+                    let month = time.getMonth() + 1;
+                    month = month < 10 ? "0" + month : month;
+                    let date = time.getDate();
+                    date = date < 10 ? "0" + date : date
+                    let hour = time.getHours();
+                    hour = hour < 10 ? "0" + hour : hour
+                    let min = time.getMinutes();
+                    min = min < 10 ? "0" + min : min
+                    let sec = time.getSeconds();
+                    sec = sec < 10 ? "0" + sec : sec
+                        //7.4 将数据返回出去
+                    return `${date}/${month}/${month} ${hour}:${min}:${sec}`
+                }
+
+                let htmlStr = template("tpl-info", userInfo);
+                $(".box").html(htmlStr);
+            })
+            //art-template步骤
+            //1.引入模板引擎
+            //2.script type ="text/html"  && id别忘了
+            //3.{{}}
+            //4.template("模板id",数据对象)
+            //5.渲染输出
+    </script>
+
+</body>
+
+</html>
