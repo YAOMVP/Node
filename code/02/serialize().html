@@ -6,37 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form</title>
-    <script src="./lib/jquery.js"></script>
 </head>
 
 <body>
-    <form action="/login" id="f1">
-        <input type="text" name="user_name" />
-        <input type="password" name="password" />
-        <button type="submit">提交</button>
-    </form>
-    <script>
-        //监听表单的提交事件
+    书名: <input type="text" id="bookname" name="bookname" /><br /> 作者:
+    <input type="text" id="author" name="author" /> <br /> 出版社:
+    <input type="text" id="publisher" name="publisher" />
+    <br />
+    <button type="submit">提交</button>
+    <script src="./lib/jquery.js"></script>
 
-        /*     $(function() {
-            $('#f1').submit(function(e) {
-                alert('监听到了表单提交的事件')
-                //不让表单自动跳转了
-                e.preventDefault()
-                //快速获取表单里的值，如果表单里不仅仅有用户名密码这些，有很多就需要使用serialize()  😊一定要有name属性
-                var data = $(this).serialize()
-                console.log(data)
+    <script>
+        $(function() {
+            //按钮写在表单域里边会有默认效果，就是自动刷新页面，如果不想要这个效果，需要😊阻止默认行为方法
+            $("button").on("click", function(e) {
+                e.preventDefault();
+                console.log("爱是一道光");
+
+                //传统方法获得图书信息:
+                let bookName = $("#bookname").val().trim();
+                let bookAuthor = $("#author").val().trim();
+                let bookPublisher = $("#publisher").val().trim();
+
+                //😊如果要收集用户信息有十几个的时候 可以用serialize() 一定要用name
+                //😊并且 name里的名字 要和接口要求的名字一致！！！！
+                //😊现在的方法：serialize()  key1=value1&key2=value2&key3=value3
+                // 😊可以一次性获得所有数据的字符串拼接结构
+                let data = $("#f1").serialize();
+                console.log(data);
+                //发起Ajax请求，添加图书信息
+                $.ajax({
+                    type: "post",
+                    url: "http://www.liulongbin.top:3006/api/addbook",
+                    data: data,
+                    success: function(backData) {
+                        console.log(backData);
+                    }
+                })
             })
-        })
- */
-        //第二种方式
-        $('#f1').on('submit', function(e) {
-            alert('监听到了表单提交的事件')
-                //不让表单自动跳转了
-            e.preventDefault()
-                //快速获取表单里的值，如果表单里不仅仅有用户名密码这些，有很多就需要使用serialize()
-            var data = $(this).serialize()
-            console.log(data);
         })
     </script>
 </body>
