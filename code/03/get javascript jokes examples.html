@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get</title>
+</head>
+
+<body>
+    <button class="get1">GET jokes using alert</button>
+    <button class="get2">GET jokes using console log</button>
+</body>
+
+<script>
+    let getFirst = document.querySelector(".get1");
+    let getSecond = document.querySelector(".get2");
+    //😊😊😊把原生代码进行封装：发起get请求
+    //😊封装函数思想：把相同的代码封装在一起，不同的代码变成参数
+    // 参数1：url不同   option.url
+    //参数2：data 接口参数(不一定有 ？num = 0)   option.data
+    //参数3：success 成功之后的回调函数    option.success
+    /*！！！！！！！！！！！！！🔏套路🔏！！！！！！！！！！！  
+    如果参数超过两个 将所有的参数放在🔏对象🔏中 option！！！！！！
+    */
+
+    function get(option) { //😊是个对象   
+        //之前分开写的：url, data, success  现在直接写：option 就是直接把对象传进来
+        //1.📗一样 声明网络请求：
+        let xhr = new XMLHttpRequest();
+
+        //2.📕不一样 设置open方法 
+        /* xhr.open("get",url) 😊要判断是否有参数的拼接,如果有要在url的后边进行一个
+        ?num=10拼接 */
+        if (option.data) { //😊看看url后边有没有data，如果有才进的来
+            // 传进来的就是?num=10
+            option.url += `?${option.data}`;
+        }
+        xhr.open("get", option.url);
+
+        //3.📕不一样onload回调函数
+        xhr.onload = function() {
+            //😊请求的目的是为了获得后台响应的数据！！！！  这是调用了声明的函数！！！
+            option.success(xhr.response); //😊里边写了什么就干什么  把xhr.response拿到，给到success回调函数 ！！！😊实参
+        }
+
+        //5.📗一样 发起send方法开始请求：
+        xhr.send();
+    }
+
+    //😊调用get方法  获得一条弹窗笑话
+    getFirst.addEventListener("click", function() {
+        get({
+            url: "https://autumnfish.cn/api/joke",
+            data: "",
+            success: function(backData) {
+                alert(backData);
+            }
+        })
+    });
+
+    //😊调用get方法 获得多条笑话，consol log显示
+    getSecond.addEventListener("click", function() {
+        get({
+            url: "https://autumnfish.cn/api/joke/list",
+            data: "num=10",
+            success: function(backData) {
+                console.log(JSON.parse(backData)); //传回来的是JSON格式的，要转换
+            }
+        })
+    });
+</script>
+
+</html>
