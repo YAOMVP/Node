@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post</title>
+</head>
+
+<body>
+    <button class="post">Post请求</button>
+    <script>
+        let post = document.querySelector(".post");
+        post.addEventListener("click", function() {
+            //😊封装函数
+            //option.url 接口地址
+            //option.data 接口参数
+            //option.success 回调函数
+            function post(option) { //😊所以只要传进来一个option进来就可以了
+                //😊1.声明网络请求
+                let xhr = new XMLHttpRequest();
+                // 😊2.open方法 传递数据类型 和 接口地址
+                xhr.open("post", option.url); //😊post请求直接用 不需要拼接
+                //3.😊加密方式 获取请求头
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                //4.😊onload方法回调函数
+                xhr.onload = function() {
+                        option.success(xhr.response); //将返回结果给回调函数
+                    } //😊这里格式写错了！！！
+                    //5.😊send方法
+                xhr.send(option.data);
+            }
+            post({
+                url: "https://autumnfish.cn/api/user/register",
+                data: "username=哥们儿",
+                success: function(backData) {
+                    console.log(backData);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
