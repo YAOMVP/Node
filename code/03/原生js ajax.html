@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+
+<body>
+    <button class="get">Get jokes</button>
+
+    <script src="./lib/jquery.js"></script>
+    <script>
+        //1.😊 jQuery方式获得ajax请求
+        $(function() {
+            $(".get").on("click", function() {
+                // $.ajax({
+                //     type: "get",
+                //     url: "https://autumnfish.cn/api/joke/list",
+                //     data: {
+                //         num: 10
+                //     },
+                //     success: function(backData) {
+                //         console.log(backData);
+                //     }
+                // })
+
+
+                //2.😊原生js方式获得ajax请求
+                //2.1😊😊 声明一个网络请求，不管是get还是post都依赖这个请求！！(jq虽然没看到，但是内部已经帮忙声明好了)
+                let xhr = new XMLHttpRequest();
+
+                //2.2😊😊 设置一个open方法，可以指定请求的方式和请求的地址
+                //xhr.open("请求类型","请求地址")
+                //注意：只有get请求才可以拼接！！！ post加密不拼接
+                xhr.open("get", "https://autumnfish.cn/api/joke/list?num=12");
+
+                //2.3😊😊设置onload回调函数 (也就是请求成功之后后台返回的数据，像jq的success)
+                xhr.onload = function() {
+                        //2.4😊😊通过xhr.response获得后台响应回的数据
+                        console.log(xhr.response);
+                        //😊😊😊😊手动将JSON对象转换为js对象
+                        console.log(JSON.parse(xhr.response));
+                    }
+                    //2.5😊😊发起send方法才可以开始请求
+                xhr.send(); //但是拿到的是JSON格式的  
+            })
+        })
+    </script>
+</body>
+
+</html>
