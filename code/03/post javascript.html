@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post</title>
+</head>
+
+<body>
+    <button class="login">Login</button>
+</body>
+<script>
+    let login = document.querySelector(".login");
+    login.addEventListener("click", function() {
+        //1.😊😊获取网络数据  ！！😊忘了new！！！！
+        let xhr = new XMLHttpRequest();
+
+        //2.😊😊 open方法获得  请求方式 与 请求地址
+        xhr.open("post", "https://autumnfish.cn/api/user/register");
+
+        //接这里😊😊 通过设置请求头 来设置post请求的加密方式 
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        //3.😊😊onload方法回调函数
+        xhr.onload = function() {
+                //4.😊😊 response方法得到数据  //相应的内容是简单数据类型所以不用JSON转换
+                console.log(xhr.response);
+            }
+            //5.😊😊 如果post请求有参数，则通过post方法来传递 (post请求是需要加密的，直接给是不认的)
+        xhr.send("username=谷大师");
+    });
+</script>
+
+</html>
