@@ -2,132 +2,132 @@
 <html lang="zh-cn">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bootstrap 101 Template</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap 101 Template</title>
 
-  <!-- Bootstrap -->
-  <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
       <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <style>
-    .wrap {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: url('images/bg03.jpg') center bottom no-repeat;
-      overflow: auto;
-    }
-
-    .navbar-brand {
-      padding: 10px 15px;
-    }
-
-    .logout {
-      font-weight: 900;
-      font-size: 20px;
-      color: #ff0000;
-      text-decoration: none;
-    }
-
-    .logout:hover {
-      text-decoration: none;
-      color: yellowgreen;
-    }
-
-    #my-table th {
-      text-align: center;
-    }
-
-    #my-table td {
-      text-align: center;
-      line-height: 80px;
-      padding: 0;
-      padding: 10px;
-    }
-
-    td img {
-      width: 80px;
-      height: 80px;
-    }
-
-    .username {
-      font-weight: 900;
-      color: hotpink;
-      background-color: yellowgreen;
-    }
-
-    .pagination {
-      margin: 0px;
-      padding: 0px;
-      font-size: 0;
-      line-height: 1;
-    }
-
-    .pagination li {
-      display: inline-block;
-      font-size: 14px;
-    }
-
-    .mp15 {
-      margin-top: 15px;
-    }
-
-    .table {
-      margin-bottom: 0;
-    }
-
-    .table-bordered>thead>tr>td,
-    .table-bordered>thead>tr>th {
-      border-bottom-width: 1px;
-    }
-
-    .page-title {
-      font-size: 16px;
-      font-weight: bold;
-    }
-  </style>
+    <style>
+        .wrap {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/bg03.jpg') center bottom no-repeat;
+            overflow: auto;
+        }
+        
+        .navbar-brand {
+            padding: 10px 15px;
+        }
+        
+        .logout {
+            font-weight: 900;
+            font-size: 20px;
+            color: #ff0000;
+            text-decoration: none;
+        }
+        
+        .logout:hover {
+            text-decoration: none;
+            color: yellowgreen;
+        }
+        
+        #my-table th {
+            text-align: center;
+        }
+        
+        #my-table td {
+            text-align: center;
+            line-height: 80px;
+            padding: 0;
+            padding: 10px;
+        }
+        
+        td img {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .username {
+            font-weight: 900;
+            color: hotpink;
+            background-color: yellowgreen;
+        }
+        
+        .pagination {
+            margin: 0px;
+            padding: 0px;
+            font-size: 0;
+            line-height: 1;
+        }
+        
+        .pagination li {
+            display: inline-block;
+            font-size: 14px;
+        }
+        
+        .mp15 {
+            margin-top: 15px;
+        }
+        
+        .table {
+            margin-bottom: 0;
+        }
+        
+        .table-bordered>thead>tr>td,
+        .table-bordered>thead>tr>th {
+            border-bottom-width: 1px;
+        }
+        
+        .page-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <nav class="navbar  navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mymenu">
+    <div class="wrap">
+        <nav class="navbar  navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mymenu">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-default">
-            <div class="panel-heading clearfix">
-              <div class="row">
-                <div class="col-md-6 page-title">英雄列表</div>
-                <div class="col-md-6 text-right">当前位置：首页</div>
-              </div>
+                    <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+                </div>
             </div>
-            <div class="panel-body">
-              <!-- action 不写 就是当前页面 method 不写 就是 get -->
-              <div class="row">
-                <div class="col-md-9">
-                  <!--<form class="form-inline">
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix">
+                            <div class="row">
+                                <div class="col-md-6 page-title">英雄列表</div>
+                                <div class="col-md-6 text-right">当前位置：首页</div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <!-- action 不写 就是当前页面 method 不写 就是 get -->
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <!--<form class="form-inline">
                       <div class="form-group">
                         <label class="sr-only" for="exampleInputAmount"
                           >Amount (in dollars)</label
@@ -146,128 +146,194 @@
                       <button type="submit" class="btn btn-default">查找</button>
                     
                     </form>-->
+                                </div>
+                                <div class="col-md-3">
+                                    <a href="./add.html" class="btn btn-success pull-right">新增</a>
+                                </div>
+
+                            </div>
+
+                            <table id="my-table" class="table table-bordered mp15">
+                                <thead>
+                                    <tr>
+                                        <th width="25%">头像</th>
+                                        <th width="25%">姓名</th>
+                                        <th width="25%">技能</th>
+                                        <th width="25%">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><img src="./lib/img/盖伦.png" alt="" /></td>
+                                        <td>盖伦</td>
+                                        <td>躲草丛</td>
+                                        <td>
+                                            <button onclick="location.href='./edit.html'" class="btn btn-primary">编辑</button>
+                                            <button onclick="alert('你真狠')" class="btn btn-danger">删除</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="./lib/img/盖伦.png" alt="" /></td>
+                                        <td>盖伦</td>
+                                        <td>躲草丛</td>
+                                        <td>
+                                            <button onclick="location.href='./edit.html'" class="btn btn-primary">编辑</button>
+                                            <button onclick="alert('你真狠')" class="btn btn-danger">删除</button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="col-md-3">
-                  <a href="./add.html" class="btn btn-success pull-right">新增</a>
-                </div>
-
-              </div>
-
-              <table id="my-table" class="table table-bordered mp15">
-                <thead>
-                  <tr>
-                    <th width="25%">头像</th>
-                    <th width="25%">姓名</th>
-                    <th width="25%">技能</th>
-                    <th width="25%">操作</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><img src="./lib/img/盖伦.png" alt="" /></td>
-                    <td>盖伦</td>
-                    <td>躲草丛</td>
-                    <td>
-                      <button onclick="location.href='./edit.html'" class="btn btn-primary">编辑</button>
-                      <button onclick="alert('你真狠')" class="btn btn-danger">删除</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><img src="./lib/img/盖伦.png" alt="" /></td>
-                    <td>盖伦</td>
-                    <td>躲草丛</td>
-                    <td>
-                      <button onclick="location.href='./edit.html'" class="btn btn-primary">编辑</button>
-                      <button onclick="alert('你真狠')" class="btn btn-danger">删除</button>
-                    </td>
-                  </tr>
-
-                </tbody>
-              </table>
             </div>
-
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="./lib/bootstrap/js/jquery-1.12.4.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="./lib/js/template-web.js"></script>
+
+    <!-- 模态框容器代码 -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+
+    <!--jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./lib/bootstrap/js/jquery-1.12.4.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/js/template-web.js"></script>
 </body>
 
 </html>
-<!-- 英雄列表模板 -->
+<!-- 英雄列表模板  4.😊 千万别忘了id 还有编辑 删除的自定义attr-->
 <script type="text/html" id="tpl-heros">
-  {{each}}
-  <tr>
+    {{each}}
     <td><img src="{{$value.icon}}" alt="" /></td>
-    <td>{{$value.name}}</td>
-    <td>{{$value.skill}}</td>
+    <td>{{value.name}}</td>
+    <td>{{value.skill}}</td>
     <td>
-      <button class="btn btn-primary btn-edit" dataid="{{$value.id}}">编辑</button>
-      <button class="btn btn-danger btn-del" dataid="{{$value.id}}">删除</button>
+        <button class="btn btn-primary" dataid="{{$value.id}}">编辑</button>
+        <button class="btn btn-danger btn_delete" dataid="{{$value.id}}">删除</button>
     </td>
-  </tr>
-  {{/each}}
+    {{/each}}
 </script>
 
 <script>
-  // 1. 封装函数: 获得英雄数据,渲染结构
-  function loadData() {
-    $.ajax({
-      type: 'get',
-      url: 'http://localhost:4399/hero/all',
-      success: function(backData) {
-        // console.log(backData);
-        if (backData.code == 200) {
-          let data = backData.data;
-          // 2. 结合模板引擎,生成标签结构
-          let htmlStr = template('tpl-heros',data);
-          $('tbody').html(htmlStr);
-        }
-      }
+    // 1. 封装函数: 获得英雄数据,渲染结构
+    // function loadData() {
+    //   $.ajax({
+    //     type: 'get',
+    //     url: 'http://localhost:4399/hero/all',
+    //     success: function(backData) {
+    //       // console.log(backData);
+    //       if (backData.code == 200) {
+    //         let data = backData.data;
+    //         // 2. 结合模板引擎,生成标签结构
+    //         let htmlStr = template('tpl-heros',data);
+    //         $('tbody').html(htmlStr);
+    //       }
+    //     }
+    //   })
+    // }
+    // // 首次加载调用
+    // loadData();
+
+    // // 3. 给所有删除按钮委托点击事件
+    // $('tbody').on('click','.btn-del',function(e){
+    //   // 4. 获得当前按钮的dataid值
+    //   let dataid = $(this).attr('dataid');
+
+    //   // 5. 发起ajax请求,删除指定的英雄
+    //   $.ajax({
+    //     type: 'get',
+    //     url: 'http://localhost:4399/hero/delete',
+    //     data: {
+    //       id: dataid
+    //     },
+    //     success: function(backData) {
+    //       // console.log(backData);
+    //       if (backData.code == 204) {
+    //         alert(backData.msg);
+    //         // 小作业: 将首页的模态框移植到当前页面
+    //         // 6. 重新加载首页数据
+    //         loadData();
+    //       }
+    //     }
+    //   })
+    // })
+
+
+    // // 7. 给所有编辑按钮委托事件
+    // $('tbody').on('click','.btn-edit',function(e){
+    //   let heroId = $(this).attr('dataid');
+    //   // 8. 跳转到编辑页面
+    //   // 解决方式2: 利用路径携带参数
+    //   window.location = './edit.html?heroid='+heroId;
+
+    //   // 问题: 如何将数据从A页面传递到B页面
+    //   // 解决方式1: 利用本地缓存
+    //   // localStorage.setItem('heroid', heroId);
+    // })
+
+    //1.😊封装函数 因为每次都需要
+    function getData() {
+        //2.😊获取ajax请求 得到所有英雄
+        $.ajax({
+            type: "get",
+            url: "http://localhost:4399/hero/all",
+            success: function(backData) {
+                console.log(backData);
+                if (backData.code === 200) {
+                    let data = backData.data; //拿到了数组
+                    //3.😊去生成模板   生成完模板引擎之后生成标签结构
+                    let htmlStr = template("tpl-heros", data);
+                    $("tbody").html(htmlStr);
+                }
+            }
+        })
+    }
+    //1.😊别忘了首次调用函数
+    getData();
+
+    //3.😊删除功能  点击删除按钮可以删除数据 没有class 需要在上边添加一个class
+    //😊删除按钮有很多 且是动态添加的 😊😊😊😊😊😊😊需要用到事件委托！！！！！！！！！！
+    $("tbody").on("click", "btn_delete", function() {
+        //😊3.2获取删除id
+        let dataid = $(this).attr("dataid"); //😊迷瞪 这里的意思hi是找到自定义属性attr，你自己写的dataid
+        // console.log(dataid);
+        // 3.3😊获取ajax请求
+        $.ajax({
+            type: "get",
+            url: "http://localhost:4399/hero/delete",
+            data: {
+                id: dataid
+            },
+            success: function(backData) {
+                console.log(backData);
+                if (backData.code === 204) {
+                    $(".modal-body p").html("backData.msg");
+                    $('#myModal').modal() //📗调用模态框，去页面上找“用法”  vscode代码上边没有id要加上
+                        //3.4😊弹出提示框之后 要刷新一下现在所有英雄的列表 调用函数
+                    getData();
+                }
+            }
+        })
     })
-  }
-  // 首次加载调用
-  loadData();
-
-  // 3. 给所有删除按钮委托点击事件
-  $('tbody').on('click','.btn-del',function(e){
-    // 4. 获得当前按钮的dataid值
-    let dataid = $(this).attr('dataid');
-
-    // 5. 发起ajax请求,删除指定的英雄
-    $.ajax({
-      type: 'get',
-      url: 'http://localhost:4399/hero/delete',
-      data: {
-        id: dataid
-      },
-      success: function(backData) {
-        // console.log(backData);
-        if (backData.code == 204) {
-          alert(backData.msg);
-          // 小作业: 将首页的模态框移植到当前页面
-          // 6. 重新加载首页数据
-          loadData();
-        }
-      }
-    })
-  })
-
-  
-  // 7. 给所有编辑按钮委托事件
-  $('tbody').on('click','.btn-edit',function(e){
-    let heroId = $(this).attr('dataid');
-    // 8. 跳转到编辑页面
-    // 解决方式2: 利用路径携带参数
-    window.location = './edit.html?heroid='+heroId;
-
-    // 问题: 如何将数据从A页面传递到B页面
-    // 解决方式1: 利用本地缓存
-    // localStorage.setItem('heroid', heroId);
-  })
 </script>
