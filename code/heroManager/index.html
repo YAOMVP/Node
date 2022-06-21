@@ -229,7 +229,7 @@
     <td>{{value.name}}</td>
     <td>{{value.skill}}</td>
     <td>
-        <button class="btn btn-primary" dataid="{{$value.id}}">编辑</button>
+        <button class="btn btn-primary btn_edit" dataid="{{$value.id}}">编辑</button>
         <button class="btn btn-danger btn_delete" dataid="{{$value.id}}">删除</button>
     </td>
     {{/each}}
@@ -335,5 +335,17 @@
                 }
             }
         })
+    })
+
+    // 6.😊编辑按钮也是动态添加的，用到事件委托
+    $("tbody").on("click", "btn_edit", function(e) {
+        e.preventDefault();
+
+        //6.1😊 比如点击 班长 的信息进行编辑，要拿到 班长 的信息 也就是对应的id
+        let heroId = $(this).attr("dataid");
+        //6.1新😊 也就是将A页面的数据 传递到 B页面中
+        //6.1新😊 答：路径携带参数，就像get一样可以拼接参数 因为这个英雄的id也不重要
+        //6.2😊跳转到编辑页面+拼接路径
+        window.location = "./edit.html?heroid=" + heroId;
     })
 </script>

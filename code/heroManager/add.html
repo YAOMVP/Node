@@ -2,199 +2,257 @@
 <html lang="zh-cn">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bootstrap 101 Template</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap 101 Template</title>
 
-  <!-- Bootstrap -->
-  <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!--
+    <!--
       HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
     -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
       <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <style>
-    .wrap {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: url('images/bg03.jpg') center bottom no-repeat;
-      overflow: auto;
-    }
-
-    .navbar-brand {
-      padding: 10px 15px;
-    }
-
-    .page-title {
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .file-input {
-      outline: none;
-      display: inline-block;
-      margin-top: 5px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-horizontal {
-      margin-top: 10px;
-    }
-
-    .logout {
-      font-weight: 900;
-      font-size: 20px;
-      color: #ff0000;
-      text-decoration: none;
-    }
-
-    .logout:hover {
-      text-decoration: none;
-      color: yellowgreen;
-    }
-
-    .preview {
-      width: 100px;
-      height: 100px;
-    }
-  </style>
+    <style>
+        .wrap {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/bg03.jpg') center bottom no-repeat;
+            overflow: auto;
+        }
+        
+        .navbar-brand {
+            padding: 10px 15px;
+        }
+        
+        .page-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .file-input {
+            outline: none;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-horizontal {
+            margin-top: 10px;
+        }
+        
+        .logout {
+            font-weight: 900;
+            font-size: 20px;
+            color: #ff0000;
+            text-decoration: none;
+        }
+        
+        .logout:hover {
+            text-decoration: none;
+            color: yellowgreen;
+        }
+        
+        .preview {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <nav class="navbar  navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mymenu">
+    <div class="wrap">
+        <nav class="navbar  navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mymenu">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
-        </div>
-      </div>
-    </nav>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-default">
-            <div class="panel-heading clearfix">
-              <div class="row">
-                <div class="col-md-6 page-title">新增英雄</div>
-                <div class="col-md-6 text-right">当前位置：首页 &gt; 新增英雄</div>
-              </div>
+                    <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+                </div>
             </div>
-            <div class="panel-body">
-              <form action="#" method="" class="form-horizontal">
-                <div class="form-group">
-                  <label for="heroName" class="col-sm-2 control-label">姓名</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="heroName" name="name" placeholder="请输入姓名" />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="skillName" class="col-sm-2 control-label">技能</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="skillName" name="skill" placeholder="请输入技能" />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="heroIcon" class="col-sm-2 control-label">头像</label>
-                  <div class="col-sm-10">
-                    <input type="file" class="file-input" id="heroIcon" name="icon" />
-                    <img src="" class="preview" alt="" />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success btn-add">
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix">
+                            <div class="row">
+                                <div class="col-md-6 page-title">新增英雄</div>
+                                <div class="col-md-6 text-right">当前位置：首页 &gt; 新增英雄</div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form action="#" method="" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="heroName" class="col-sm-2 control-label">姓名</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="heroName" name="name" placeholder="请输入姓名" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="skillName" class="col-sm-2 control-label">技能</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="skillName" name="skill" placeholder="请输入技能" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="heroIcon" class="col-sm-2 control-label">头像</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" class="file-input" id="heroIcon" name="icon" />
+                                        <img src="" class="preview" alt="" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-success btn-add">
                       新 增
                     </button>
-                  </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-              </form>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <script src="./lib/bootstrap/js/jquery-1.12.4.js"></script>
-  <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-  
+    <script src="./lib/bootstrap/js/jquery-1.12.4.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
 <script>
-  $(function () {
-    // 1. 完成图片的预览功能
-    // 监听上传按钮是否发生变化
-    // 获得当前上传图片的文件
-    // 将文件变成路径,将路径赋值给img标签
-    $('#heroIcon').on('change',function(e){
-      // 2. 获得当前上传的图片文件对象
-      let picFile = this.files[0];
+    // $(function () {
+    //   // 1. 完成图片的预览功能
+    //   // 监听上传按钮是否发生变化
+    //   // 获得当前上传图片的文件
+    //   // 将文件变成路径,将路径赋值给img标签
+    //   $('#heroIcon').on('change',function(e){
+    //     // 2. 获得当前上传的图片文件对象
+    //     let picFile = this.files[0];
 
-      // 3. 将图片对象转换成为图片路径
-      let picUrl = URL.createObjectURL(picFile);
-      // console.log(picUrl);
+    //     // 3. 将图片对象转换成为图片路径
+    //     let picUrl = URL.createObjectURL(picFile);
+    //     // console.log(picUrl);
 
-      // 4. 将图片的路径赋值给img标签
-      $('img.preview').attr('src', picUrl);
+    //     // 4. 将图片的路径赋值给img标签
+    //     $('img.preview').attr('src', picUrl);
+    //   })
+
+    //   // 5. 给新增按钮设置点击事件
+    //   $('.btn-add').on('click',function(e){
+    //     e.preventDefault();
+
+    //     // 6. 获得表单域中所有的数据: 名称,技能,头像
+    //     // 尝试使用快速序列化获得数据
+    //     // 注意: 只能获得文字数据,无法获得图片数据
+    //     // let data = $('form').serialize();
+
+    //     // 7. 利用FormData方式获得表单域中所有数据: 文字和图片
+    //     // new FormData(原生的form标签)
+    //     // 前提: 表单控件的name值与参数名一样
+    //     let fd = new FormData(document.querySelector('form'));
+    //     // console.log(fd);// 无法直接打印获取
+
+    //     // 利用fd.get('参数名')获取
+    //     // console.log(fd.get('name'));
+    //     // console.log(fd.get('skill'));
+    //     // console.log(fd.get('icon'));
+
+    //     // 8. 发起ajax请求,携带formData数据提交
+    //     // formData的ajax请求有不同的地方
+    //     $.ajax({
+    //       type: 'post',
+    //       url: 'http://localhost:4399/hero/add',
+    //       data: fd,
+    //       // FormData是一种加密方式,post请求默认也有一种加密方式: application/x-www-form-urlencoded
+    //       // 两种加密方式会冲突,需要将默认的post请求加密关闭
+    //       contentType: false,
+    //       processData: false,
+    //       success: function(backData) {
+    //         // console.log(backData);
+    //         if (backData.code == 201) {
+    //           alert(backData.msg);
+    //           window.location = './index.html';
+    //         }
+    //       }
+    //     })
+
+    //   })
+    // })
+
+    $(function() {
+        // 😊1.完成图片的预览功能
+        //😊😊😊要知道按钮是否有变化 需要用到change 不是click
+        //📗click是点击就触发  change是改变了才触发
+        $("#heroIcon").on("change", function() { //📗不是点击了就触发，是change
+            // console.log("触发了");
+            //2.新😊获得当前上传的文件对象  
+
+            //console.log(this.files);
+            let picFile = this.files[0]; //this指的$("#heroIcon")里边有个files属性,里边的第0张照片 
+            //😊是个以对象{}形式存储的伪数组，因为index是0 还有length
+
+            //3.新😊😊😊😊😊将图片对象 转换为图片路径
+            let picUrl = URL.createObjectURL(picFile);
+            console.log(picUrl);
+            //4.😊将图片的路径赋值给img标签
+            $("img.preview").attr("src", picUrl);
+        })
+
+        //5.😊点击新增按钮，可以添加数据，新增按钮在form表单里，别忘了阻止默认行为，要不然会有自动刷新功能
+        $(".btn-add").on("click", function(e) {
+            e.preventDefault();
+            //😊😊😊😊😊😊😊😊😊😊😊😊5.1 获得表单域中name skill icon参数 可用serialize()方法 也叫快速序列化方法 一起得到吗？只能得到字符串 icon图片得不到
+            // let data = (".form").serialize(); //注意 里边的名字与class名字是否匹配
+
+            //5.2新😊字符串+图片可以用formData来获取  
+            //5.2新😊 new formData()  构造函数！！！！！
+            //5.2新😊 (原生js的方式获取表单)
+            let fd = new FormData(document.querySelector("form"));
+            //5.2新😊 这时候会把表单所有的数据都放在fd里，
+            //5.2新😊console.log(fd);  formData本身是一种加密方式，无法直接打印获取
+            //5.2新😊 我们可以分别查看 利用fd.get("参数名");  存进去哪些 去的时候就要这要查看
+            console.log(fd.get("name"));
+            console.log(fd.get("skill"));
+            console.log(fd.get("icon"));
+
+            //5.3😊发起ajax请求
+            $.ajax({
+                type: "post",
+                url: "http://localhost:4399/hero/add",
+                //5.4新😊data里直接跟上fd 因为data里要{对象} fd就是一个对象，因为new 了FormData
+                data: fd,
+                //5.4新😊 FormData是一种加密方式，post请求也是一种加密方式，所以需要关闭默认的post加密方式 application/x-wwww-form-urlencoded  里边的也就是请求头的前边
+                contentType: false,
+                processData: false,
+                //5.4新😊这要就只剩下FormData的自己加密方式了
+                success: function(backData) {
+                    console.log(backData);
+                    if (backData.code === 201) {
+                        $(".modal-body p").html("backData.msg");
+                        $('#myModal').modal() //📗调用模态框，去页面上找“用法”  vscode代码上边没有id要加上
+                        window.location = "./index.html";
+                    }
+                }
+            })
+        })
     })
-
-    // 5. 给新增按钮设置点击事件
-    $('.btn-add').on('click',function(e){
-      e.preventDefault();
-
-      // 6. 获得表单域中所有的数据: 名称,技能,头像
-      // 尝试使用快速序列化获得数据
-      // 注意: 只能获得文字数据,无法获得图片数据
-      // let data = $('form').serialize();
-
-      // 7. 利用FormData方式获得表单域中所有数据: 文字和图片
-      // new FormData(原生的form标签)
-      // 前提: 表单控件的name值与参数名一样
-      let fd = new FormData(document.querySelector('form'));
-      // console.log(fd);// 无法直接打印获取
-
-      // 利用fd.get('参数名')获取
-      // console.log(fd.get('name'));
-      // console.log(fd.get('skill'));
-      // console.log(fd.get('icon'));
-
-      // 8. 发起ajax请求,携带formData数据提交
-      // formData的ajax请求有不同的地方
-      $.ajax({
-        type: 'post',
-        url: 'http://localhost:4399/hero/add',
-        data: fd,
-        // FormData是一种加密方式,post请求默认也有一种加密方式: application/x-www-form-urlencoded
-        // 两种加密方式会冲突,需要将默认的post请求加密关闭
-        contentType: false,
-        processData: false,
-        success: function(backData) {
-          // console.log(backData);
-          if (backData.code == 201) {
-            alert(backData.msg);
-            window.location = './index.html';
-          }
-        }
-      })
-
-    })
-  })
 </script>

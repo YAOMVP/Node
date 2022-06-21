@@ -2,213 +2,228 @@
 <html lang="zh-cn">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bootstrap 101 Template</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap 101 Template</title>
 
-  <!-- Bootstrap -->
-  <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!--
+    <!--
       HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
     -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
       <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <style>
-    .wrap {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: url('images/bg03.jpg') center bottom no-repeat;
-      overflow: auto;
-    }
-
-    .navbar-brand {
-      padding: 10px 15px;
-    }
-
-    .page-title {
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .file-input {
-      outline: none;
-      display: inline-block;
-      margin-top: 5px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-horizontal {
-      margin-top: 10px;
-    }
-
-    .logout {
-      font-weight: 900;
-      font-size: 20px;
-      color: #ff0000;
-      text-decoration: none;
-    }
-
-    .logout:hover {
-      text-decoration: none;
-      color: yellowgreen;
-    }
-
-    .preview {
-      width: 100px;
-      height: 100px;
-    }
-  </style>
+    <style>
+        .wrap {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/bg03.jpg') center bottom no-repeat;
+            overflow: auto;
+        }
+        
+        .navbar-brand {
+            padding: 10px 15px;
+        }
+        
+        .page-title {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .file-input {
+            outline: none;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-horizontal {
+            margin-top: 10px;
+        }
+        
+        .logout {
+            font-weight: 900;
+            font-size: 20px;
+            color: #ff0000;
+            text-decoration: none;
+        }
+        
+        .logout:hover {
+            text-decoration: none;
+            color: yellowgreen;
+        }
+        
+        .preview {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <nav class="navbar  navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mymenu">
+    <div class="wrap">
+        <nav class="navbar  navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mymenu">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
-        </div>
-      </div>
-    </nav>
+                    <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+                </div>
+            </div>
+        </nav>
 
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="panel panel-default">
-              <div class="panel-heading clearfix">
-                  <div class="row">
-                  <div class="col-md-6 page-title">英雄信息修改</div>
-                  <div class="col-md-6 text-right">当前位置：首页 &gt; 英雄信息修改</div>
-                </div>
-                </div>
-            <div class="panel-body">
-              <form action="#" method="" class="form-horizontal">
-                <!-- 隐藏一个input  隐藏域:天生就是隐藏的-->
-                <!-- <input type="hidden" name="id" id="heroId"/> -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading clearfix">
+                            <div class="row">
+                                <div class="col-md-6 page-title">英雄信息修改</div>
+                                <div class="col-md-6 text-right">当前位置：首页 &gt; 英雄信息修改</div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form action="#" method="" class="form-horizontal">
+                                <!-- 隐藏一个input  隐藏域:天生就是隐藏的-->
+                                <!-- <input type="hidden" name="id" id="heroId"/> -->
 
-                <div class="form-group">
-                  <label for="heroName" class="col-sm-2 control-label">姓名</label>
-                  <div class="col-sm-10">
-                    <input required type="text" class="form-control" id="heroName" name="name"
-                      placeholder="请输入姓名" value="盖伦" />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="skillName" class="col-sm-2 control-label">技能</label>
-                  <div class="col-sm-10">
-                    <input required type="text" class="form-control" id="skillName" name="skill"
-                      placeholder="请输入技能" value="躲草丛" />
-                  </div>
-                </div>
-                <div class="form-group">                 
-                  <label for="heroIcon" class="col-sm-2 control-label">头像</label>
-                  <div class="col-sm-10">
-                    <!-- 预览的标签 -->
-                    <img src="lib/img/盖伦.png" class="preview" alt="">
-                    <input required type="file" class="file-input" id="heroIcon" name="icon" />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-primary btn-save">
+                                <div class="form-group">
+                                    <label for="heroName" class="col-sm-2 control-label">姓名</label>
+                                    <div class="col-sm-10">
+                                        <input required type="text" class="form-control" id="heroName" name="name" placeholder="请输入姓名" value="盖伦" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="skillName" class="col-sm-2 control-label">技能</label>
+                                    <div class="col-sm-10">
+                                        <input required type="text" class="form-control" id="skillName" name="skill" placeholder="请输入技能" value="躲草丛" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="heroIcon" class="col-sm-2 control-label">头像</label>
+                                    <div class="col-sm-10">
+                                        <!-- 预览的标签 -->
+                                        <img src="lib/img/盖伦.png" class="preview" alt="">
+                                        <input required type="file" class="file-input" id="heroIcon" name="icon" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-primary btn-save">
                       保存
                     </button>
-                    <button type="submit" class="btn btn-cancel">取消</button>
-                  </div>
+                                        <button type="submit" class="btn btn-cancel">取消</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-              </form>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-  <script src="./lib/bootstrap/js/jquery-1.12.4.js"></script>
-  <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
-  
+    <script src="./lib/bootstrap/js/jquery-1.12.4.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+
 </body>
 
 </html>
 <script>
-  $(function () {
-    // 1. 获得指定的英雄id(在url路径的末端)
-    // window.location.search --> 可以直接获得url的参数部分
-    let heroid = window.location.search.split('=')[1];
-    
-    // 2. 根据英雄的id发起ajax请求
-    $.ajax({
-      type: 'get',
-      url: 'http://localhost:4399/hero/id',
-      data: {
-        id: heroid
-      },
-      success: function(backData) {
-        // console.log(backData);
-        if (backData.code == 200) {
-          // 3. 将数据赋值到指定的容器中
-          $('#heroName').val(backData.data.name);
-          $('#skillName').val(backData.data.skill);
-          $('img.preview').attr('src',backData.data.icon);
-        }
-      }
+    $(function() {
+        // 1. 获得指定的英雄id(在url路径的末端)
+        // window.location.search --> 可以直接获得url的参数部分
+        let heroid = window.location.search.split('=')[1];
+
+        // 2. 根据英雄的id发起ajax请求
+        $.ajax({
+            type: 'get',
+            url: 'http://localhost:4399/hero/id',
+            data: {
+                id: heroid
+            },
+            success: function(backData) {
+                // console.log(backData);
+                if (backData.code == 200) {
+                    // 3. 将数据赋值到指定的容器中
+                    $('#heroName').val(backData.data.name);
+                    $('#skillName').val(backData.data.skill);
+                    $('img.preview').attr('src', backData.data.icon);
+                }
+            }
+        })
+
+        // 4. 完成图片预览
+        $('#heroIcon').on('change', function(e) {
+            let picFile = this.files[0]; //😊拿到第0张图片
+            let picUrl = URL.createObjectURL(picFile); //😊拿到图片路径
+            $('img.preview').attr('src', picUrl); //😊再把路径赋值给图片
+        })
+
+        // 7. 给保存按钮设置点击事件
+        $('.btn-save').on('click', function(e) {
+            e.preventDefault();
+
+            // 6. 获得当前英雄的数据(利用FormData获取)
+            let fd = new FormData(document.querySelector('form')); // 自动获得name,skill,icon
+
+            // 7. 手动添加英雄id  这是个方法 不和之前append的一样
+            fd.append('id', heroid);
+
+            // console.log(fd.get('name'));
+            // console.log(fd.get('skill'));
+            // console.log(fd.get('id'));
+            // console.log(fd.get('icon'));
+
+            // 8. 发起ajax请求,携带FormData数据
+            $.ajax({
+                type: 'post',
+                url: 'http://localhost:4399/hero/update',
+                data: fd,
+                contentType: false,
+                processData: false,
+                success: function(backData) {
+                    // console.log(backData);
+                    if (backData.code == 202) {
+                        alert(backData.msg);
+                        window.location.href = './index.html';
+                    }
+                }
+            })
+
+        })
+
     })
-    
-    // 4. 完成图片预览
-    $('#heroIcon').on('change',function(e){
-      let picFile = this.files[0];
-      let picUrl = URL.createObjectURL(picFile);
-      $('img.preview').attr('src',picUrl);
-    })
+    $(function() {
+        //初始做法拿到英雄的路径
+        let url = window.location.href;
+        console.log(url);
+        //要的是？后边
+        let search0 = url.split("?")[1];
+        let heroid0 = search0.split("=")[1];
+        console.log(heroid0);
 
-    // 5. 给保存按钮设置点击事件
-    $('.btn-save').on('click',function(e){
-      e.preventDefault();
+        //😊😊😊最终做法：获得指定的英雄id
+        let heroid = window.location.search.split("=")[1]; //直接就可以拿到？后边的值 但是只要=后边的还需要拼接
+        console.log(heroid); //81 拿到的是值
 
-      // 6. 获得当前英雄的数据(利用FormData获取)
-      let fd = new FormData(document.querySelector('form'));// 自动获得name,skill,icon
 
-      // 7. 手动添加英雄id
-      fd.append('id',heroid);
-
-      // console.log(fd.get('name'));
-      // console.log(fd.get('skill'));
-      // console.log(fd.get('id'));
-      // console.log(fd.get('icon'));
-
-      // 8. 发起ajax请求,携带FormData数据
-      $.ajax({
-        type: 'post',
-        url: 'http://localhost:4399/hero/update',
-        data: fd,
-        contentType: false,
-        processData: false,
-        success: function(backData) {
-          // console.log(backData);
-          if (backData.code == 202) {
-            alert(backData.msg);
-            window.location.href = './index.html';
-          }
-        }
-      })
+        //😊根据id获取英雄 发起ajax请求
 
     })
-
-  })
 </script>
