@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .login-panel {
+            margin-top: 100px;
+        }
+        
+        .vCode {
+            height: 36px;
+            cursor: pointer;
+        }
+        
+        .wrap {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/bg03.jpg') center bottom no-repeat;
+            overflow: auto;
+        }
+        
+        .navbar-brand {
+            padding: 10px 15px;
+        }
+        
+        .form-horizontal {
+            margin-top: 10px;
+        }
+        
+        .form-horizontal .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <nav class="navbar  navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mymenu">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                    <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="panel panel-default login-panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><b>用户登录</b></h3>
+                        </div>
+                        <div class="panel-body">
+                            <form action="#" method="post" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="userName" class="col-sm-2 control-label">用户名</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="username" class="form-control" id="username" placeholder="请输入用户名" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="userPass" class="col-sm-2 control-label">密码</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" name="password" class="form-control" id="password" placeholder="请输入密码" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-success login">
+                      登陆
+                    </button>
+                                        <a href="./register.html" class="btn btn-default">注册</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框容器代码 -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">温馨提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./lib/bootstrap/js/jquery-1.12.4.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+
+
+</html>
+<script>
+    // $(function() {
+    //     // 1. 给登录按钮设置点击事件
+    //     $('.login').on('click', function(e) {
+    //         e.preventDefault();
+
+    //         // 2. 获得用户输入的信息
+    //         let username = $('#username').val().trim();
+    //         let password = $('#password').val().trim();
+    //         if (username == '' || password == '') {
+    //             // alert('傻猪猪,要输入完整哦!');
+    //             // 调用模态框显示代码
+    //             $('.modal-body p').text('傻猪猪,要输入完整哦!');
+    //             $('#myModal').modal();
+    //             return;
+    //         }
+
+    //         // 3. 发起ajax请求,验证用户信息
+    //         $.ajax({
+    //             type: 'post',
+    //             url: 'http://localhost:4399/user/login',
+    //             data: {
+    //                 username: username,
+    //                 password: password
+    //             },
+    //             success: function(backData) {
+    //                 // alert(backData.msg); 特点: 可以卡住程序的执行
+    //                 // 调用模态框显示代码
+    //                 // 特点: 不会卡住程序的执行,下面的代码依旧可以正常执行
+    //                 $('.modal-body p').text(backData.msg);
+    //                 $('#myModal').modal();
+    //                 // 解决方式: 监听模态框,当模态框被关闭之后,再执行以下的代码
+
+    //                 // 当模态框被关闭的时候会执行
+    //                 $('#myModal').on('hidden.bs.modal', function(e) {
+    //                     // 4. 判断登录的状态
+    //                     if (backData.code == 200) {
+    //                         // 跳转到index页面
+    //                         window.location = './index.html';
+    //                     } else {
+    //                         // 清空输入框
+    //                         $('#username').val('');
+    //                         $('#password').val('');
+    //                     }
+    //                 })
+    //             }
+    //         })
+
+    //     })
+    // })
+    $(function() {
+        //1.😊给登录按钮添加登录事件
+        $(".login").on("click", function(e) {
+            e.preventDefault(); //😊😊😊忘了!!! 阻止默认行为
+
+            //2.😊获取用户输入的内容：
+            let userName = $("#username").val().trim();
+            let password = $("#password").val().trim();
+            //3.😊判断输入的内容是否为空
+            if (userName === "" || password === "") {
+                //📗 alert("输入内容呀哥们儿");用模态框
+                $(".modal-body p").html("输入内容呀哥们儿");
+                $('#myModal').modal() //📗调用模态框，去页面上找“用法”  vscode代码上边没有id要加上
+
+                return; //直接结束函数，因为在函数里边
+            }
+            //4.😊获取ajax请求：
+            $.ajax({
+                type: "post",
+                url: "http://localhost:4399/user/login",
+                data: {
+                    username: userName,
+                    password: password
+                },
+                success: function(backData) {
+                    //📗alert(backData.msg);
+                    $(".modal-body p").html(backData.msg);
+                    $('#myModal').modal();
+                    //📗模态框要先监听 才能执行以下代码，bootstrap要不然太快了，代码执行一闪而过 
+                    $('#myModal').on('hidden.bs.modal', function(e) {
+                        if (backData.code === 200) {
+                            //5.😊成功跳转到index页面
+                            window.location = "./index/html"
+                        } else {
+                            //6.😊失败输入 清空内容
+                            $("#username").val("");
+                            $("#password").val("")
+                        }
+                    })
+                }
+            })
+        })
+    })
+</script>
