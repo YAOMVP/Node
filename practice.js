@@ -17,7 +17,7 @@ pokemon.random();
 
 let wildPokemon = pokemon.random();
 
-let myPokemon = pokemon.random();
+let myPokemon = pokemon3692779.random();
 
 let randomNumber = Math.floor((Math.random() * 2));
 
