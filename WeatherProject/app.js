@@ -1,11 +1,22 @@
 const express = require("express");
-const { log } = require("node:console");
 const https = require("node:https");
 const app = express();
 const port = 3000;
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: true })); //app.use(express.urlencoded({ extended: true})); Body-Parser is now included in Express.
 
 app.get("/", (req, res) => {
-    const url = "https://api.weatherapi.com/v1/current.json?key=f5122e86b67d46a1b12132731221708&q=Hobart&aqi=yes";
+    res.sendFile(__dirname + "/index.html");
+});
+
+app.post("/", (req, res) => {
+    console.log("Post received");
+    // console.log(req.body);
+    console.log(req.body.cityName);
+    const query = `${req.body.cityName}`;
+
+    const url = `https://api.weatherapi.com/v1/current.json?key=f5122e86b67d46a1b12132731221708&q=${query}&aqi=yes`;
 
     https.get(url, (response) => {
         console.log(response.statusCode);
@@ -36,8 +47,7 @@ app.get("/", (req, res) => {
 
         });
     })
-
-});
+})
 
 
 app.listen(port, () => {
