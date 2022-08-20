@@ -1,0 +1,56 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #DBE2EF;
+}
+
+.h2 {
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+}
+
+.form-signin {
+    max-width: 500px;
+    padding: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="text"],
+.form-signin input[type="text"],
+.form-signin input[type="email"] {
+    border-radius: 15px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #F9F7F7;
+}
+
+.form-signin input[type="text"] {
+    margin-bottom: -1px;
+}
+
+.form-signin input[type="text"],
+.form-signin input[type="email"] {
+    margin-bottom: 10px;
+}
+
+.form-signin button[type="submit"],
+.form-signin p {
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+}
+
+.form-signin p {
+    font-size: 20px;
+}
