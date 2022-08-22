@@ -10,6 +10,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/contact", (req, res) => {
+    //email
     res.send("<h2>Contact me at:oliviachen797@gmail.com</h2>")
 })
 
